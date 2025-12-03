@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load humanize %} 
+
+{% block title %}{{ user.username }} Profil Detayları{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-body">
+            
+            <p><strong>Ad Soyad:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Kullanıcı Adı:</strong> {{ user.username }}</p>
+            <hr>
+            <p><strong>Son Giriş Tarihi:</strong> {{ user.last_login|date:"d F Y H:i" }}</p>
+            <p><strong>Hesap Açılış Tarihi:</strong> {{ user.date_joined|date:"d F Y H:i" }}</p>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

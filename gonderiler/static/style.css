@@ -1,0 +1,105 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#content {
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    color: #333333;
+    font-size: 0.9em;
+}
+
+
+.kargo-liste {
+    list-style: none;
+    padding: 0;
+}
+
+.kargo-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+
+h3.durum {
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.teslim-edildi { 
+    color: #0d6d0d;
+    background-color: #e6ffe6;
+    border: 1px solid #0d6d0d;
+}
+
+.dagitimda { 
+    color: #cc8400;
+    background-color: #fff8e6;
+    border: 1px solid #cc8400;
+}
+
+.yolda { 
+    color: #004d99;
+    background-color: #e6f7ff;
+    border: 1px solid #004d99;
+}
+
+
+.admin-message { 
+    padding: 10px;
+    background-color: #e6f0ff;
+    border: 1px solid #007bff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.admin-message a {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.search-input {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.detail-link-container {
+    margin-top: 10px;
+}

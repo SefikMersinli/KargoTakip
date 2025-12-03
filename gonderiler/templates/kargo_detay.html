@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block title %}Detay: {{ detay.takip_no }}{% endblock %} {% block content %}
+
+<a href="{% url 'anasayfa' %}">← Kargo Listesine Dön</a>
+
+<h1>Kargo Detayları (Takip No: {{ detay.takip_no }})</h1>
+<hr>
+
+<p><strong>Son Durum:</strong> {{ detay.durum }}</p>
+<p><strong>Alıcı:</strong> {{ detay.alici_isim }}</p>
+<p><strong>Adres:</strong> {{ detay.alici_adres }}</p>
+
+<p><strong>KDV'siz Fiyat:</strong> {{ detay.fiyat|floatformat:2 }} TL</p>
+
+<p><strong>Oluşturma Tarihi:</strong> {{ detay.olusturma_tarihi|date:"d M Y (H:i)" }}</p>
+<p><strong>Son Güncelleme Tarihi:</strong> {{ detay.guncelleme_tarihi|date:"d M Y (H:i)" }}</p>
+
+<hr> {% if detay.durum == "TESLIM" %}
+<h3 class="durum teslim-edildi">Kargo başarıyla teslim edilmiştir.</h3>
+{% elif detay.durum == "DAGITIMDA" %}
+<h3 class="durum dagitimda">Kargonuz bugün içinde teslim edilecektir.</h3>
+{% else %}
+<h3 class="durum yolda">Kargo yolda, lütfen bekleyiniz.</h3>
+{% endif %} {% endblock %}

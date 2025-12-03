@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Giriş Yap{% endblock %}
+
+{% block content %}
+<h2>Kullanıcı Girişi</h2>
+
+<form method="POST">
+  {% csrf_token %}
+  
+  <div class="mb-3">
+    <label for="username" class="form-label">Kullanıcı Adı</label>
+    <input type="text" class="form-control" name="username" id="username" required>
+  </div>
+  
+  <div class="mb-3">
+    <label for="password" class="form-label">Şifre</label>
+    <input type="password" class="form-control" name="password" id="password" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Giriş Yap</button>
+</form>
+{% endblock %}
