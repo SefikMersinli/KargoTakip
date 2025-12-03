@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Kargo Yönetici Listesi{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="mb-4">{{ baslik }}</h2> 
+        <p class="text-muted">
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Takip No</th>
+                <th>Alıcı Adı</th>
+                <th>Kargo Durumu</th>
+                <th>Ücret</th>
+                <th>Oluşturma Tarihi</th>
+                <th>Eylem</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for gonderi in gonderiler %}
+            <tr>
+                <td>
+                    <a href="{% url 'kargo_detay' %}?takip_no_input={{ gonderi.takip_no }}" class="fw-bold text-decoration-none">
+                        {{ gonderi.takip_no }}
+                    </a>
+                </td>
+                <td>{{ gonderi.alici_isim }}</td>
+                <td>
+                    {% if gonderi.durum == 'Teslim Edildi' %}
+                        <span class="badge bg-success">{{ gonderi.durum }}</span>
+                    {% elif gonderi.durum == 'Dağıtıma Çıktı' %}
+                        <span class="badge bg-warning text-dark">{{ gonderi.durum }}</span>
+                    {% else %}
+                        <span class="badge bg-info text-dark">{{ gonderi.durum }}</span>
+                    {% endif %}
+                </td>
+                <td>{{ gonderi.fiyat }}</td>
+                <td class="text-muted small">{{ gonderi.tarih }}</td>
+                <td>
+                    <a href="{% url 'kargo_detay' %}?takip_no_input={{ gonderi.takip_no }}" class="btn btn-sm btn-outline-primary">Detay</a> 
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+<div class="row mt-4">
+    <div class="col">
+        <a href="{% url 'kargo_ekle'%}" class="btn btn-success float-end">Yeni Kargo Ekle</a>
+    </div>
+</div>
+{% endblock content %}

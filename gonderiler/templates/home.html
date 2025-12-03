@@ -1,9 +1,20 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
 
-{% block title %}Ana Sayfa{% endblock %}
+{% block title %} Kargo Takip 
+{% endblock %}
 
 {% block content %}
-    <h1>Kargo Takip Sistemi Ana Sayfasına Hoş Geldiniz</h1>
-    
-
-{% endblock %}
+<br><br><br><br><br><br><br><br><br><br><br>
+<div class="row justify-content-center mb-5">
+    <div class="col-md-8 col-lg-6">
+        <form action="{% url 'kargo_detay' %}" method="GET" class="mb-4">
+            <div class="input-group input-group-lg shadow-sm">
+                <input type="text" class="form-control" placeholder="Takip Numarası Giriniz..." 
+                       name="takip_no_input" aria-label="Takip Numarası" required>
+                <button class="btn btn-warning fw-bold" type="submit">Kargoyu Sorgula</button> 
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
